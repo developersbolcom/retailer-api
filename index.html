@@ -1,17 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="refresh" content="1; url=static/index.html">
-		 
-		<script>
-		  window.location.href = "static/index.html"
-		</script>
-		 
-		<title>Page Redirection</title>
-	</head>
+ <head>
+   <title>ReDoc</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
 
-	<body>
-		If you are not redirected automatically, follow the <a href='static/index.html'>link to home page</a>.
-	</body>
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+ </head>
+ <body>
+   <redoc spec-url='https://raw.githubusercontent.com/developersbolcom/apidocs/master/docs/swagger.json'></redoc>
+   <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+ </body>
 </html>
