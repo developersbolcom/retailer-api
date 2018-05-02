@@ -1,3 +1,4 @@
+
 {
 	"swagger": "2.0",
 	"info": {
@@ -273,8 +274,8 @@
 		"/retailer/inbounds/productlabels": {
 			"post": {
 				"tags": ["Inbounds"],
-				"summary": "Get FBB Productlabels by EAN",
-				"description": "Get FBB Productlabels by EAN.",
+				"summary": "Get FBB productlabels by EAN",
+				"description": "Get FBB productlabels by EAN.",
 				"operationId": "get-product-labels",
 				"consumes": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"produces": ["application/vnd.retailer.v3+pdf"],
@@ -372,8 +373,8 @@
 		"/retailer/inbounds/{inbound-id}/shippinglabel": {
 			"get": {
 				"tags": ["Inbounds"],
-				"summary": "Get FBB-shippinglabel by InboundId",
-				"description": "Get FBB-shippinglabel by InboundId.",
+				"summary": "Get FBB shippinglabel by InboundId",
+				"description": "Get FBB shippinglabel by InboundId.",
 				"operationId": "get-inbound-shipping-label",
 				"produces": ["application/vnd.retailer.v3+pdf"],
 				"parameters": [{
@@ -1047,7 +1048,7 @@
 			"get": {
 				"tags": ["Shipments"],
 				"summary": "Get a shipment by shipment id",
-				"description": "Retrieve a single shipment by itâ€™s corresponding id.",
+				"description": "Retrieve a single shipment by its corresponding id.",
 				"operationId": "get-shipment",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
