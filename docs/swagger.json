@@ -1,4 +1,3 @@
-
 {
 	"swagger": "2.0",
 	"info": {
@@ -6,7 +5,7 @@
 		"version": "3.0.0",
 		"title": "v3"
 	},
-	"host": "merchant.services.bol.com",
+	"host": "api.bol.com",
 	"basePath": "/",
 	"tags": [{
 		"name": "Commission",
@@ -49,7 +48,7 @@
 			"post": {
 				"tags": ["Commission"],
 				"summary": "Get all commissions and reductions by EAN in bulk",
-				"description": "Gets all commissions and possible reductions by EAN, condition, and optionally price. No more than 100 EANs can be sent in a single request.",
+				"description": "Gets all commissions and possible reductions by EAN, condition and optionally price. No more than 100 EAN`s can be sent in a single request.",
 				"operationId": "get-commissions",
 				"consumes": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
@@ -64,7 +63,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/BulkCommissionResponse"
 						}
@@ -88,13 +87,13 @@
 				"parameters": [{
 					"name": "ean",
 					"in": "path",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"required": true,
 					"type": "string"
 				}, {
 					"name": "condition",
 					"in": "query",
-					"description": "Condition of the offer.",
+					"description": "The condition of the offer.",
 					"required": false,
 					"type": "string",
 					"default": "NEW",
@@ -108,7 +107,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Commission"
 						}
@@ -138,7 +137,7 @@
 				}, {
 					"name": "bsku",
 					"in": "query",
-					"description": "BSKU number associated with this product.",
+					"description": "The BSKU number associated with this product.",
 					"required": false,
 					"type": "string"
 				}, {
@@ -163,7 +162,7 @@
 				}, {
 					"name": "page",
 					"in": "query",
-					"description": "Page number.",
+					"description": "The page number.",
 					"required": false,
 					"type": "integer",
 					"default": 1,
@@ -171,7 +170,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Inbounds"
 						}
@@ -198,14 +197,8 @@
 					}
 				}],
 				"responses": {
-					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/ProcessStatus"
-						}
-					},
 					"202": {
-						"description": "Accepted: Succesfully scheduled the request for processing.",
+						"description": "Accepted: Successfully scheduled the request for processing.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
@@ -243,7 +236,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Delivery windows for inbound shipments."
 						}
@@ -263,7 +256,7 @@
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/TransportersResponse"
 						}
@@ -298,7 +291,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
@@ -316,8 +309,8 @@
 		"/retailer/inbounds/{inbound-id}": {
 			"get": {
 				"tags": ["Inbounds"],
-				"summary": "Get inbound by inboundId",
-				"description": "Get inbound by inboundId.",
+				"summary": "Get inbound by inbound id",
+				"description": "Get inbound by inbound id.",
 				"operationId": "get-inbound",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
@@ -330,7 +323,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Inbound"
 						}
@@ -344,8 +337,8 @@
 		"/retailer/inbounds/{inbound-id}/packinglist": {
 			"get": {
 				"tags": ["Inbounds"],
-				"summary": "Get packing list by inboundId",
-				"description": "Get packing list by inboundId.",
+				"summary": "Get packing list by inbound id",
+				"description": "Get packing list by inbound id.",
 				"operationId": "get packing list",
 				"produces": ["application/vnd.retailer.v3+pdf"],
 				"parameters": [{
@@ -358,7 +351,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
@@ -373,8 +366,8 @@
 		"/retailer/inbounds/{inbound-id}/shippinglabel": {
 			"get": {
 				"tags": ["Inbounds"],
-				"summary": "Get FBB shippinglabel by InboundId",
-				"description": "Get FBB shippinglabel by InboundId.",
+				"summary": "Get FBB shippinglabel by inbound id",
+				"description": "Get FBB shippinglabel by inbound id.",
 				"operationId": "get-inbound-shipping-label",
 				"produces": ["application/vnd.retailer.v3+pdf"],
 				"parameters": [{
@@ -387,7 +380,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
@@ -403,13 +396,13 @@
 			"get": {
 				"tags": ["Inbounds"],
 				"summary": "Get LVB/FBB inventory",
-				"description": "The inventory endpoint is a specific LVB/FBB endpoint; it only provides information about your Fulfillment by bol.com Inventory. This endpoint does not provide information about your own stock.",
+				"description": "The inventory endpoint is a specific LVB/FBB endpoint. It only provides information about your fulfillment by bol.com inventory. This endpoint does not provide information about your own stock.",
 				"operationId": "get-inventory",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
 					"name": "page",
 					"in": "query",
-					"description": "Page number.",
+					"description": "The page number.",
 					"required": false,
 					"type": "integer",
 					"default": 1,
@@ -434,7 +427,7 @@
 				}, {
 					"name": "state",
 					"in": "query",
-					"description": "Filter inventory by NCKs-stock level.",
+					"description": "Filter inventory by NCK‘s stock level.",
 					"required": false,
 					"type": "string",
 					"enum": ["saleable", "unsaleable"]
@@ -447,7 +440,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/InventoryResponse"
 						}
@@ -462,7 +455,7 @@
 			"get": {
 				"tags": ["Invoices"],
 				"summary": "Get all invoices",
-				"description": "Gets a list of invoices, by default from the past 4 weeks. The optional period parameter can be used to retrieve invoices from a specific date range in the past. Invoices and their specifications can be downloaded separately in different media formats with the 'GET an invoice by idâ€™ and theâ€‚'GET an invoice specification by idâ€™ calls. The available media types differ per invoice and are listed per invoice within the response. Note, the media types listed in the response must be given in our standard API format.",
+				"description": "Gets a list of invoices, by default from the past 4 weeks. The optional period parameter can be used to retrieve invoices from a specific date range in the past. Invoices and their specifications can be downloaded separately in different media formats with the ‘GET an invoice by id’ and the ‘GET an invoice specification by id’ calls. The available media types differ per invoice and are listed per invoice within the response. Note: the media types listed in the response must be given in our standard API format.",
 				"operationId": "get-invoices",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
@@ -474,11 +467,14 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
 						}
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -487,7 +483,7 @@
 			"get": {
 				"tags": ["Invoices"],
 				"summary": "Get an invoice by invoice id",
-				"description": "Gets an invoice by invoice id. The available media types differ per invoice and are listed within the response from the â€˜GET all invoicesâ€™ call. Note, the media types listed in the response must be given in our standard API format.",
+				"description": "Gets an invoice by invoice id. The available media types differ per invoice and are listed within the response from the ‘GET all invoices’ call. Note: the media types listed in the response must be given in our standard API format.",
 				"operationId": "get-invoice",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml", "application/vnd.retailer.v3+pdf"],
 				"parameters": [{
@@ -500,7 +496,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
@@ -516,31 +512,34 @@
 			"get": {
 				"tags": ["Invoices"],
 				"summary": "Get an invoice specification by invoice id",
-				"description": "Gets an invoice specification for an invoice with a paginated list of its transactions. The available media types differ per invoice specification and are listed within the response from the â€˜GET all invoicesâ€™ call. Note, the media types listed in the response must be given in our standard API format.",
+				"description": "Gets an invoice specification for an invoice with a paginated list of its transactions. The available media types differ per invoice specification and are listed within the response from the ‘GET all invoices’ call. Note, the media types listed in the response must be given in our standard API format.",
 				"operationId": "get-invoice-specification",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml", "application/vnd.retailer.v3+pdf", "application/vnd.retailer.v3+openxmlformats-officedocument.spreadsheetml.sheet"],
 				"parameters": [{
 					"name": "invoice-id",
 					"in": "path",
-					"description": "The id of the invoice",
+					"description": "The id of the invoice.",
 					"required": false,
 					"type": "integer",
 					"format": "int64"
 				}, {
 					"name": "page",
 					"in": "query",
-					"description": "The page to get",
+					"description": "The page to get.",
 					"required": false,
 					"type": "integer",
 					"format": "int32"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
 						}
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -549,7 +548,7 @@
 			"put": {
 				"tags": ["Offers"],
 				"summary": "Create or update an offer",
-				"description": "Offers are uniquely identified by the combination of EAN+Condition. When inserting an EAN+Condition combination that is already known as an offer, this request will result in an update for that offer. When inserting an EAN+Condition combination that is not yet known as an offer, it will result in a newly created offer.",
+				"description": "Offers are uniquely identified by the combination of EAN and condition. When inserting an EAN and condition combination that is already known as an offer, this request will result in an update for that offer. When inserting an EAN and condition combination that is not yet known as an offer, it will result in a newly created offer.",
 				"operationId": "upsert-offer",
 				"consumes": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
@@ -564,10 +563,7 @@
 				}],
 				"responses": {
 					"202": {
-						"description": "Accepted",
-						"schema": {
-							"type": "object"
-						}
+						"description": "Accepted: Successfully scheduled the request for processing."
 					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
@@ -591,10 +587,7 @@
 				}],
 				"responses": {
 					"202": {
-						"description": "Accepted",
-						"schema": {
-							"type": "object"
-						}
+						"description": "Accepted: Successfully scheduled the request for processing."
 					}
 				}
 			}
@@ -609,14 +602,14 @@
 				"parameters": [{
 					"name": "filter",
 					"in": "query",
-					"description": "Filter the returned offers by published status",
+					"description": "Filter the returned offers by published status.",
 					"required": false,
 					"type": "string",
 					"enum": ["published", "not-published"]
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/OfferFile"
 						}
@@ -630,20 +623,20 @@
 		"/retailer/offers/export/{filename}": {
 			"get": {
 				"tags": ["Offers"],
-				"summary": "Download offers CSV file",
-				"description": "The CSV file is created by calling 'Create offers CSV file'",
+				"summary": "Download offers CSV file.",
+				"description": "The CSV file is created by calling 'Create offers CSV file'.",
 				"operationId": "download-offer-csv-file",
 				"produces": ["application/vnd.retailer.v3+csv"],
 				"parameters": [{
 					"name": "filename",
 					"in": "path",
-					"description": "The filename of the CSV file",
+					"description": "The filename of the CSV file.",
 					"required": false,
 					"type": "string"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK"
+						"description": "Ok: Successfully processed the request."
 					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
@@ -655,25 +648,25 @@
 			"get": {
 				"tags": ["Offers"],
 				"summary": "Get an offer by product EAN",
-				"description": "Gets all offers for products with the given EAN. If condition is provided, only offers for the given product EAN with that condition are returned",
+				"description": "Gets all offers for products with the given EAN. If a condition is provided, only offers for the given product EAN with that condition are returned.",
 				"operationId": "get-offer",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
 					"name": "ean",
 					"in": "path",
-					"description": "The EAN of the product to get offers for",
+					"description": "The EAN of the product to get offers for.",
 					"required": false,
 					"type": "string"
 				}, {
 					"name": "condition",
 					"in": "query",
-					"description": "The condition of the product to filter offers by",
+					"description": "The condition of the product to filter offers by.",
 					"required": false,
 					"type": "string"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/OfferResponse"
 						}
@@ -691,13 +684,13 @@
 			"get": {
 				"tags": ["Orders"],
 				"summary": "Get all open orders",
-				"description": "Gets a paginated list of all open orders sorted by date (descending).",
+				"description": "Gets a paginated list of all open orders sorted by date in descending order.",
 				"operationId": "get-orders",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
 					"name": "page",
 					"in": "query",
-					"description": "The page to get",
+					"description": "The page to get.",
 					"required": false,
 					"type": "integer",
 					"default": 1,
@@ -705,7 +698,7 @@
 				}, {
 					"name": "shipments-method",
 					"in": "query",
-					"description": "The shipments method to filter orders by",
+					"description": "The shipments method to filter orders by.",
 					"required": false,
 					"type": "string",
 					"default": "FBR",
@@ -713,7 +706,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Orders"
 						}
@@ -728,22 +721,25 @@
 			"get": {
 				"tags": ["Orders"],
 				"summary": "Get an order by order id",
-				"description": "Gets an order by order id",
+				"description": "Gets an order by order id.",
 				"operationId": "get-order",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
 					"name": "order-id",
 					"in": "path",
-					"description": "The id of the order to get",
+					"description": "The id of the order to get.",
 					"required": false,
 					"type": "string"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Orders"
 						}
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -752,7 +748,7 @@
 			"put": {
 				"tags": ["Orders"],
 				"summary": "Cancel an order by order item id",
-				"description": "This endpoint can be used to either confirm a cancellation request by the customer, or to cancel an order you yourself are unable to fulfil.",
+				"description": "This endpoint can be used to either confirm a cancellation request by the customer or to cancel an order you yourself are unable to fulfil.",
 				"operationId": "cancel-order",
 				"consumes": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
@@ -773,7 +769,7 @@
 				}],
 				"responses": {
 					"201": {
-						"description": "Created",
+						"description": "Created: Successfully created the resource.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
@@ -809,10 +805,13 @@
 				}],
 				"responses": {
 					"201": {
-						"description": "Created",
+						"description": "Created: Successfully created the resource.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
+					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					}
 				}
 			}
@@ -821,20 +820,20 @@
 			"get": {
 				"tags": ["Process Status"],
 				"summary": "Get the status of an asynchronous process by id",
-				"description": "Retrieve a specific process-status, which shows information regarding a previously executed POST- or PUT-request. All PUT- and POST-requests on the other endpoints will supply a process-status-ID in the related response. You can use this ID to retrieve a status by using the endpoint below.",
+				"description": "Retrieve a specific process-status, which shows information regarding a previously executed PUT/POST request. All PUT/POST requests on the other endpoints will supply a process-status-id in the related response. You can use this id to retrieve a status by using the endpoint below.",
 				"operationId": "get-process-status",
 				"produces": ["application/vnd.retailer.v3+json", "application/vnd.retailer.v3+xml"],
 				"parameters": [{
 					"name": "process-status-id",
 					"in": "path",
-					"description": "The ID of the process-status being requested. This ID is supplied in every response to a PUT/POST request on the other endpoints.",
+					"description": "The id of the process status being requested. This id is supplied in every response to a PUT/POST request on the other endpoints.",
 					"required": false,
 					"type": "integer",
 					"format": "int64"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
@@ -858,13 +857,13 @@
 				"parameters": [{
 					"name": "order-item-id",
 					"in": "path",
-					"description": "The orderItemId of the order to get purchasable shipping labels from",
+					"description": "The order item id of the order to get purchasable shipping labels from.",
 					"required": false,
 					"type": "string"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/PurchasableShippingLabelsResponse"
 						}
@@ -882,7 +881,7 @@
 			"get": {
 				"tags": ["Reductions"],
 				"summary": "Get reductions list",
-				"description": "This endpoint will return a list EANâ€™s that are eligible for reductions on the commission fee.",
+				"description": "This endpoint will return a list EAN’s that are eligible for reductions on the commission fee.",
 				"operationId": "get-reductions",
 				"produces": ["application/vnd.retailer.v3+csv"],
 				"responses": {
@@ -919,7 +918,7 @@
 				"parameters": [{
 					"name": "page",
 					"in": "query",
-					"description": "The page to get",
+					"description": "The page to get.",
 					"required": false,
 					"type": "integer",
 					"default": 1,
@@ -929,14 +928,14 @@
 				}, {
 					"name": "handled",
 					"in": "query",
-					"description": "The status of the returns you wish to see, shows either handled or unhandled returns",
+					"description": "The status of the returns you wish to see, shows either handled or unhandled returns. The id of the order item to cancel.",
 					"required": false,
 					"type": "boolean",
 					"default": false
 				}, {
 					"name": "shipments-method",
 					"in": "query",
-					"description": "The shipments method to filter orders by",
+					"description": "The shipments method to filter orders by.",
 					"required": false,
 					"type": "string",
 					"default": "FBR",
@@ -944,7 +943,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "Ok: Succesfully processed the request.",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/ReturnsResponse"
 						}
@@ -980,14 +979,8 @@
 					}
 				}],
 				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"$ref": "#/definitions/ProcessStatus"
-						}
-					},
 					"202": {
-						"description": "Accepted: Succesfully scheduled the request for processing.",
+						"description": "Accepted: Successfully scheduled the request for processing.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
@@ -1008,7 +1001,7 @@
 				"parameters": [{
 					"name": "page",
 					"in": "query",
-					"description": "The page number to get",
+					"description": "The page number to get.",
 					"required": false,
 					"type": "integer",
 					"default": 1,
@@ -1016,7 +1009,7 @@
 				}, {
 					"name": "shipments-method",
 					"in": "query",
-					"description": "The shipments method. FBR means Fulfilment By Retailer and FBB means Fulfilment By Bol",
+					"description": "The shipments method. Fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"required": false,
 					"type": "string",
 					"default": "FBR",
@@ -1024,13 +1017,13 @@
 				}, {
 					"name": "order-id",
 					"in": "query",
-					"description": "The id of the order to get shipment information for",
+					"description": "The id of the order to get shipment information for.",
 					"required": false,
 					"type": "string"
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/ShipmentResponse"
 						}
@@ -1054,7 +1047,7 @@
 				"parameters": [{
 					"name": "shipment-id",
 					"in": "path",
-					"description": "The id of the shipment",
+					"description": "The id of the shipment.",
 					"required": false,
 					"type": "integer",
 					"format": "int64"
@@ -1086,7 +1079,7 @@
 				"parameters": [{
 					"name": "transport-id",
 					"in": "path",
-					"description": "The transport id",
+					"description": "The transport id.",
 					"required": false,
 					"type": "integer",
 					"format": "int64"
@@ -1101,7 +1094,7 @@
 				}],
 				"responses": {
 					"201": {
-						"description": "Created: Succesfully created the resource.",
+						"description": "Created: Successfully created the resource.",
 						"schema": {
 							"$ref": "#/definitions/ProcessStatus"
 						}
@@ -1121,7 +1114,7 @@
 				"parameters": [{
 					"name": "transport-id",
 					"in": "path",
-					"description": "The transport id",
+					"description": "The transport id.",
 					"required": false,
 					"type": "integer",
 					"minimum": 1.0,
@@ -1130,11 +1123,14 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string",
 							"format": "byte"
 						}
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -1148,37 +1144,37 @@
 				"addressSupplement": {
 					"type": "string",
 					"example": "Lorem Ipsum",
-					"description": "Address supplement.",
+					"description": "The address supplement.",
 					"allowEmptyValue": false
 				},
 				"city": {
 					"type": "string",
 					"example": "Utrecht",
-					"description": "City name",
+					"description": "The city name.",
 					"allowEmptyValue": false
 				},
 				"company": {
 					"type": "string",
 					"example": "bol.com",
-					"description": "Company name",
+					"description": "The company name.",
 					"allowEmptyValue": false
 				},
 				"countryCode": {
 					"type": "string",
 					"example": "NL",
-					"description": "Country code",
+					"description": "The country code.",
 					"allowEmptyValue": false
 				},
 				"deliveryPhoneNumber": {
 					"type": "string",
 					"example": "012123456",
-					"description": "Delivery phone number.",
+					"description": "The delivery phone number.",
 					"allowEmptyValue": false
 				},
 				"email": {
 					"type": "string",
 					"example": "billie@verkopen.bol.com",
-					"description": "Email address",
+					"description": "The e-mail address.",
 					"allowEmptyValue": false
 				},
 				"extraAddressInformation": {
@@ -1190,48 +1186,49 @@
 				"firstName": {
 					"type": "string",
 					"example": "Billie",
-					"description": "First name",
+					"description": "The first name.",
 					"allowEmptyValue": false
 				},
 				"houseNumber": {
 					"type": "string",
 					"example": 1,
-					"description": "House number",
+					"description": "The house number.",
 					"allowEmptyValue": false
 				},
 				"houseNumberExtended": {
 					"type": "string",
 					"example": "B",
-					"description": "Extension on house number.",
+					"description": "The extension on house number.",
 					"allowEmptyValue": false
 				},
 				"salutationCode": {
 					"type": "string",
 					"example": "02",
+					"description": "The salutation code.",
 					"allowEmptyValue": false
 				},
 				"streetName": {
 					"type": "string",
 					"example": "Dorpstraat",
-					"description": "Street name",
+					"description": "The street name.",
 					"allowEmptyValue": false
 				},
 				"surName": {
 					"type": "string",
 					"example": "Jansen",
-					"description": "Surname",
+					"description": "The surname.",
 					"allowEmptyValue": false
 				},
 				"vatNumber": {
 					"type": "string",
 					"example": "NL999999999B99",
-					"description": "VAT number",
+					"description": "The VAT number.",
 					"allowEmptyValue": false
 				},
 				"zipCode": {
 					"type": "string",
 					"example": "1111 ZZ",
-					"description": "Zipcode",
+					"description": "The ZIP code.",
 					"allowEmptyValue": false
 				}
 			},
@@ -1245,14 +1242,14 @@
 				"condition": {
 					"type": "string",
 					"example": "NEW",
-					"description": "Condition of the offer.",
+					"description": "The condition of the offer.",
 					"allowEmptyValue": false,
 					"enum": ["NEW", "AS_NEW", "GOOD", "REASONABLE", "MODERATE"]
 				},
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false,
 					"minLength": 1,
 					"maxLength": 2147483647
@@ -1323,7 +1320,7 @@
 				"trackAndTrace": {
 					"type": "string",
 					"example": "3SBOL0987654321",
-					"description": "TrackAndTrace code associated with this transport. The entered TrackAndTrace code will be verified. If you do not have the code, please omit this attribute entirely.",
+					"description": "The track and trace code associated with this transport. The entered track and trace code will be verified. If you do not have the code, please omit this attribute entirely.",
 					"allowEmptyValue": false,
 					"minLength": 4,
 					"maxLength": 50
@@ -1344,13 +1341,13 @@
 				"condition": {
 					"type": "string",
 					"example": "NEW",
-					"description": "Condition of the offer.",
+					"description": "The condition of the offer.",
 					"allowEmptyValue": false
 				},
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"fixedAmount": {
@@ -1399,37 +1396,37 @@
 				"addressSupplement": {
 					"type": "string",
 					"example": "Lorem Ipsum",
-					"description": "Address supplement.",
+					"description": "The address supplement.",
 					"allowEmptyValue": false
 				},
 				"city": {
 					"type": "string",
 					"example": "Utrecht",
-					"description": "City name",
+					"description": "The city name.",
 					"allowEmptyValue": false
 				},
 				"company": {
 					"type": "string",
 					"example": "bol.com",
-					"description": "Company name",
+					"description": "The company name.",
 					"allowEmptyValue": false
 				},
 				"countryCode": {
 					"type": "string",
 					"example": "NL",
-					"description": "Country code",
+					"description": "The country code.",
 					"allowEmptyValue": false
 				},
 				"deliveryPhoneNumber": {
 					"type": "string",
 					"example": "012123456",
-					"description": "Delivery phone number.",
+					"description": "The delivery phone number.",
 					"allowEmptyValue": false
 				},
 				"email": {
 					"type": "string",
 					"example": "billie@verkopen.bol.com",
-					"description": "Email address",
+					"description": "The e-mail address.",
 					"allowEmptyValue": false
 				},
 				"extraAddressInformation": {
@@ -1441,48 +1438,49 @@
 				"firstName": {
 					"type": "string",
 					"example": "Billie",
-					"description": "First name",
+					"description": "The first name.",
 					"allowEmptyValue": false
 				},
 				"houseNumber": {
 					"type": "string",
 					"example": 1,
-					"description": "House number",
+					"description": "The house number.",
 					"allowEmptyValue": false
 				},
 				"houseNumberExtended": {
 					"type": "string",
 					"example": "B",
-					"description": "Extension on house number.",
+					"description": "The extension on house number.",
 					"allowEmptyValue": false
 				},
 				"salutationCode": {
 					"type": "string",
 					"example": "02",
+					"description": "The salutation code.",
 					"allowEmptyValue": false
 				},
 				"streetName": {
 					"type": "string",
 					"example": "Dorpstraat",
-					"description": "Street name",
+					"description": "The street name.",
 					"allowEmptyValue": false
 				},
 				"surname": {
 					"type": "string",
 					"example": "Jansen",
-					"description": "Surname",
+					"description": "The surname.",
 					"allowEmptyValue": false
 				},
 				"vatNumber": {
 					"type": "string",
 					"example": "NL999999999B99",
-					"description": "VAT number",
+					"description": "The VAT number.",
 					"allowEmptyValue": false
 				},
 				"zipCode": {
 					"type": "string",
 					"example": "1111 ZZ",
-					"description": "Zipcode",
+					"description": "The ZIP code.",
 					"allowEmptyValue": false
 				}
 			},
@@ -1524,7 +1522,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 1,
-					"description": "The number of announced BSKU's.",
+					"description": "The number of announced BSKU‘s.",
 					"allowEmptyValue": false
 				},
 				"announcedQuantity": {
@@ -1571,7 +1569,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 1,
-					"description": "The number of received BSKU's.",
+					"description": "The number of received BSKU‘s.",
 					"allowEmptyValue": false
 				},
 				"receivedQuantity": {
@@ -1685,13 +1683,13 @@
 				"bsku": {
 					"type": "string",
 					"example": 2950002126612,
-					"description": "BSKU number associated with this product.",
+					"description": "The BSKU number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"nckStock": {
@@ -1810,7 +1808,7 @@
 				"orderId": {
 					"type": "string",
 					"example": 4123456789,
-					"description": "The order id",
+					"description": "The order id.",
 					"allowEmptyValue": false
 				},
 				"orderItems": {
@@ -1836,20 +1834,20 @@
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"fulfilmentMethod": {
 					"type": "string",
 					"example": "FBR",
-					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or by bol.com (FBB).",
+					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"allowEmptyValue": false
 				},
 				"latestDeliveryDate": {
 					"type": "string",
 					"format": "date",
 					"example": "2017-02-10",
-					"description": "Result of the date the order was placed combined with the delivery promise made by the seller. This field has been renamed from â€œPromisedDeliveryDateâ€. ",
+					"description": "Result of the date the order was placed combined with the delivery promise made by the seller. This field has been renamed from “PromisedDeliveryDate”. ",
 					"allowEmptyValue": false
 				},
 				"offerCondition": {
@@ -1868,13 +1866,13 @@
 				"offerReference": {
 					"type": "string",
 					"example": "BOLCOM00123",
-					"description": "Value provided by seller through Offer API as â€˜ReferenceCodeâ€™.",
+					"description": "Value provided by seller through Offer API as ‘ReferenceCode’.",
 					"allowEmptyValue": false
 				},
 				"orderItemId": {
 					"type": "string",
 					"example": 2012345678,
-					"description": "ID for the product (1 order can have multiple OrderItems).",
+					"description": "The id for the product (1 order can have multiple order items).",
 					"allowEmptyValue": false
 				},
 				"quantity": {
@@ -1938,7 +1936,7 @@
 				"entityId": {
 					"type": "string",
 					"example": 987654321,
-					"description": "ID of the object being processed. E.g. in case of a shipment process-ID, you will receive the ID of the OrderItem being processed.",
+					"description": "The id of the object being processed. E.g. in case of a shipment process id, you will receive the id of the order item being processed.",
 					"allowEmptyValue": false
 				},
 				"errorMessage": {
@@ -1957,7 +1955,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 1234567,
-					"description": "ID of the process-status.",
+					"description": "The process status id.",
 					"allowEmptyValue": false
 				},
 				"links": {
@@ -1972,7 +1970,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 123456789,
-					"description": "ID of the seller.",
+					"description": "The seller id.",
 					"allowEmptyValue": false
 				},
 				"status": {
@@ -1999,13 +1997,13 @@
 				"bsku": {
 					"type": "string",
 					"example": 2950002126612,
-					"description": "BSKU number associated with this product.",
+					"description": "The BSKU number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"receivedQuantity": {
@@ -2032,7 +2030,7 @@
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"quantity": {
@@ -2166,7 +2164,7 @@
 				"condition": {
 					"type": "string",
 					"example": "NEW",
-					"description": "Condition of the offer.",
+					"description": "The condition of the offer.",
 					"allowEmptyValue": false,
 					"enum": ["NEW", "AS_NEW", "GOOD", "REASONABLE", "MODERATE"]
 				},
@@ -2180,19 +2178,19 @@
 				"description": {
 					"type": "string",
 					"example": "Lorem ipsum",
-					"description": "A description that is only applicable when the chosen condition is unequal to â€œNEWâ€. Note: It will be ignored if condition is NEW. Attention: Maximum amount of characters: 2000.",
+					"description": "A description that is only applicable when the chosen condition is unequal to “NEW”. Note: it will be ignored if condition is NEW. Attention: Maximum amount of characters: 2000.",
 					"allowEmptyValue": false
 				},
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"fulfilmentMethod": {
 					"type": "string",
 					"example": "FBB",
-					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or by bol.com (FBB).",
+					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"allowEmptyValue": false,
 					"enum": ["FBR", "FBR"]
 				},
@@ -2206,7 +2204,7 @@
 				"publish": {
 					"type": "boolean",
 					"example": false,
-					"description": "Boolean (true/false) determining whether the seller desires the product to be offered for sale on the bol.com website. Note: Even when set to true, other factors may cause the offer not to be online.",
+					"description": "Boolean (true/false) determining whether the seller desires the product to be offered for sale on the bol.com website. Note: even when set to true, other factors may cause the offer not to be online.",
 					"allowEmptyValue": false
 				},
 				"quantityInStock": {
@@ -2247,7 +2245,7 @@
 			"properties": {
 				"condition": {
 					"type": "string",
-					"description": "Condition of the offer. It is possible to have more conditions per EAN, this means one EAN can be linked to multiple offers. Please choose the EAN+Condition combination you wish to delete. Note: if you do not specify a Condition, ALL Conditions for this EAN will be deleted",
+					"description": "Condition of the offer. It is possible to have more conditions per EAN, this means one EAN can be linked to multiple offers. Please choose the EAN and condition combination you wish to delete. Note: if you do not specify a condition, all conditions for this EAN will be deleted.",
 					"allowEmptyValue": false,
 					"minLength": 1,
 					"maxLength": 2147483647
@@ -2273,13 +2271,13 @@
 				"ean": {
 					"type": "string",
 					"example": 9789076174082,
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"fulfilmentMethod": {
 					"type": "string",
 					"example": "FBB",
-					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or by bol.com (FBB).",
+					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"allowEmptyValue": false
 				},
 				"handled": {
@@ -2298,7 +2296,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 4012345678,
-					"description": "The order id",
+					"description": "The order id.",
 					"allowEmptyValue": false
 				},
 				"processingDateTime": {
@@ -2325,13 +2323,14 @@
 					"type": "string",
 					"format": "date-time",
 					"example": "2016-11-14+01:00",
+					"description": "The date/time in ISO 8601 format of registration.",
 					"allowEmptyValue": false
 				},
 				"returnNumber": {
 					"type": "integer",
 					"format": "int64",
 					"example": 31234567,
-					"description": "Specifies which return-item is being handled.",
+					"description": "Specifies which return item is being handled.",
 					"allowEmptyValue": false
 				},
 				"returnReason": {
@@ -2355,7 +2354,7 @@
 				"trackAndTrace": {
 					"type": "string",
 					"example": "3SBOL0987654321",
-					"description": "TrackAndTrace code associated with this transport. The entered TrackAndTrace code will be verified. If you do not have the code, please omit this attribute entirely.",
+					"description": "The track and trace code associated with this transport. The entered track and trace code will be verified. If you do not have the code, please omit this attribute entirely.",
 					"allowEmptyValue": false
 				}
 			},
@@ -2431,7 +2430,7 @@
 					"type": "integer",
 					"format": "int64",
 					"example": 541757635,
-					"description": "The shipment id",
+					"description": "The shipment id.",
 					"allowEmptyValue": false
 				},
 				"shipmentItems": {
@@ -2469,13 +2468,13 @@
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false
 				},
 				"fulfilmentMethod": {
 					"type": "string",
 					"example": "FBB",
-					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or by bol.com (FBB).",
+					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"allowEmptyValue": false,
 					"enum": ["FBR", "FBB"]
 				},
@@ -2496,13 +2495,13 @@
 				"offerPrice": {
 					"type": "number",
 					"example": 12.99,
-					"description": "Price for the entire product amount. This means the Item Price multiplied by the Quantity.",
+					"description": "Price for the entire product amount. This means the item price multiplied by the quantity.",
 					"allowEmptyValue": false
 				},
 				"offerReference": {
 					"type": "string",
 					"example": "BOLCOM00123",
-					"description": "Value provided by seller through Offer API as â€˜ReferenceCodeâ€™.",
+					"description": "Value provided by seller through Offer API as ‘ReferenceCode’.",
 					"allowEmptyValue": false
 				},
 				"orderDate": {
@@ -2521,7 +2520,7 @@
 				"orderItemId": {
 					"type": "string",
 					"example": 1234567891,
-					"description": "Item being sent. OrderItemID can be retrieved through the order request.",
+					"description": "Item being sent. The order item id can be retrieved through the order request.",
 					"allowEmptyValue": false
 				},
 				"quantity": {
@@ -2555,7 +2554,7 @@
 				"shippingLabelCode": {
 					"type": "string",
 					"example": "PLR00000002",
-					"description": "Specifies shipping-label to be used for this shipment. Can be retrieved through the shipping-label endpoint.",
+					"description": "Specifies shipping label to be used for this shipment. Can be retrieved through the shipping label endpoint.",
 					"allowEmptyValue": false
 				},
 				"transport": {
@@ -2605,7 +2604,7 @@
 				"errorCode": {
 					"type": "string",
 					"example": "ERR1234",
-					"description": "If Published is set to N, this field will show the associated error code.",
+					"description": "If published is set to N, this field will show the associated error code.",
 					"allowEmptyValue": false
 				},
 				"errorMessage": {
@@ -2658,14 +2657,14 @@
 				"trackAndTrace": {
 					"type": "string",
 					"example": "3SBOL0987654321",
-					"description": "TrackAndTrace code associated with this transport. The entered TrackAndTrace code will be verified. If you do not have the code, please omit this attribute entirely.",
+					"description": "The track and trace code associated with this transport. The entered track and trace code will be verified. If you do not have the code, please omit this attribute entirely.",
 					"allowEmptyValue": false
 				},
 				"transportId": {
 					"type": "integer",
 					"format": "int64",
 					"example": 312778947,
-					"description": "The transport id",
+					"description": "The transport id.",
 					"allowEmptyValue": false
 				},
 				"transporterCode": {
@@ -2729,7 +2728,7 @@
 				"condition": {
 					"type": "string",
 					"example": "NEW",
-					"description": "Condition of the offer. It is possible to have more conditions per EAN.",
+					"description": "The condition of the offer. It is possible to have more conditions per EAN.",
 					"allowEmptyValue": false,
 					"enum": ["NEW", "AS_NEW", "GOOD", "REASONABLE", "MODERATE"]
 				},
@@ -2742,7 +2741,7 @@
 				"description": {
 					"type": "string",
 					"example": "Lorem ipsum",
-					"description": "A description that is only applicable when the chosen condition is unequal to â€œNEWâ€. Note: It will be ignored if condition is NEW. Attention: Maximum amount of characters: 2000.",
+					"description": "A description that is only applicable when the chosen condition is unequal to “NEW”. Note: it will be ignored if condition is NEW. Attention: Maximum amount of characters: 2000.",
 					"allowEmptyValue": false,
 					"minLength": 0,
 					"maxLength": 2000
@@ -2750,14 +2749,14 @@
 				"ean": {
 					"type": "string",
 					"example": "0000007740404",
-					"description": "EAN number associated with this product.",
+					"description": "The EAN number associated with this product.",
 					"allowEmptyValue": false,
 					"minLength": 1,
 					"maxLength": 2147483647
 				},
 				"fulfilmentMethod": {
 					"type": "string",
-					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or by bol.com (FBB).",
+					"description": "Specifies whether this shipment has been fulfilled by the retailer (FBR) or fulfilled by bol.com (FBB).",
 					"allowEmptyValue": false,
 					"enum": ["FBR", "FBR"]
 				},
@@ -2775,14 +2774,14 @@
 				"publish": {
 					"type": "boolean",
 					"example": false,
-					"description": "Boolean (true/false) determining whether the seller desires the product to be offered for sale on the bol.com website. Note: Even when set to true, other factors may cause the offer not to be online.",
+					"description": "Boolean (true/false) determining whether the seller desires the product to be offered for sale on the bol.com website. Note: even when set to true, other factors may cause the offer not to be online.",
 					"allowEmptyValue": false
 				},
 				"quantityInStock": {
 					"type": "integer",
 					"format": "int32",
 					"example": 10,
-					"description": "The amount of items in stock. Minimum value: 0. Maximum value: 999",
+					"description": "The amount of items in stock. Minimum value: 0. Maximum value: 999.",
 					"allowEmptyValue": false,
 					"minimum": 0.0,
 					"maximum": 9.223372036854776E+18,
