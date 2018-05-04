@@ -177,6 +177,9 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			},
@@ -330,6 +333,9 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -359,6 +365,9 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -388,6 +397,9 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -472,9 +484,6 @@
 							"type": "string",
 							"format": "byte"
 						}
-					},
-					"404": {
-						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -502,8 +511,8 @@
 							"format": "byte"
 						}
 					},
-					"404": {
-						"description": "Not found: The requested item could not been found."
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					}
 				}
 			}
@@ -538,8 +547,8 @@
 							"format": "byte"
 						}
 					},
-					"404": {
-						"description": "Not found: The requested item could not been found."
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					}
 				}
 			}
@@ -565,6 +574,9 @@
 					"202": {
 						"description": "Accepted: Successfully scheduled the request for processing."
 					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
 					}
@@ -588,6 +600,9 @@
 				"responses": {
 					"202": {
 						"description": "Accepted: Successfully scheduled the request for processing."
+					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					}
 				}
 			}
@@ -637,6 +652,9 @@
 				"responses": {
 					"200": {
 						"description": "Ok: Successfully processed the request."
+					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
@@ -713,6 +731,9 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
+					},
+					"404": {
+						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -737,6 +758,9 @@
 						"schema": {
 							"$ref": "#/definitions/Orders"
 						}
+					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
@@ -886,7 +910,7 @@
 				"produces": ["application/vnd.retailer.v3+csv"],
 				"responses": {
 					"200": {
-						"description": "OK"
+						"description": "Ok: Successfully processed the request."
 					}
 				}
 			}
@@ -900,7 +924,7 @@
 				"produces": ["application/vnd.retailer.v3+csv"],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"type": "string"
 						}
@@ -1030,9 +1054,6 @@
 					},
 					"400": {
 						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
-					},
-					"404": {
-						"description": "Not found: The requested item could not been found."
 					}
 				}
 			}
@@ -1054,7 +1075,7 @@
 				}],
 				"responses": {
 					"200": {
-						"description": "OK",
+						"description": "Ok: Successfully processed the request.",
 						"schema": {
 							"$ref": "#/definitions/Shipment"
 						}
@@ -1128,6 +1149,9 @@
 							"type": "string",
 							"format": "byte"
 						}
+					},
+					"400": {
+						"description": "Bad request: The sent request does not meet the API specification. Please check the error message(s) for more information."
 					},
 					"404": {
 						"description": "Not found: The requested item could not been found."
