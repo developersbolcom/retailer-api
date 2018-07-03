@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "The bol.com API for Retailers",
+    "description": "The bol.com API for Retailers.",
     "version": "3.0.0",
     "title": "v3"
   },
@@ -1316,8 +1316,8 @@
         "tags": [
           "Returns"
         ],
-        "summary": "Handle an open return",
-        "description": "Allows the user to handle a return by setting a new handling result for it after receiving the returned item(s).",
+        "summary": "Handle a return",
+        "description": "Allows the user to handle a return. This can be to either handle an open return, or change the handlingResult of an already handled return. The latter is only possible in limited scenarios, please check the returns documentation for a complete list.",
         "operationId": "handle-return_1",
         "consumes": [
           "application/vnd.retailer.v3+json",
@@ -2338,7 +2338,7 @@
       ],
       "properties": {
         "customerDetails": {
-          "$ref": "#/definitions/CustomerDetails"
+          "$ref": "#/definitions/OrderCustomerDetails"
         },
         "dateTimeOrderPlaced": {
           "type": "string",
@@ -2362,6 +2362,23 @@
       },
       "title": "Order",
       "description": "An order"
+    },
+    "OrderCustomerDetails": {
+      "type": "object",
+      "required": [
+        "billingDetails",
+        "shipmentDetails"
+      ],
+      "properties": {
+        "billingDetails": {
+          "$ref": "#/definitions/AddressDetails"
+        },
+        "shipmentDetails": {
+          "$ref": "#/definitions/AddressDetails"
+        }
+      },
+      "title": "OrderCustomerDetails",
+      "description": "Customer details of the order"
     },
     "OrderItem": {
       "type": "object",
@@ -2484,13 +2501,13 @@
         "createTimestamp": {
           "type": "string",
           "format": "date-time",
-          "example": "2016-11-14T09:34:41.000+01:00",
+          "example": "2018-11-14T09:34:41.000+01:00",
           "description": "Time of creation of the response.",
           "allowEmptyValue": false
         },
         "description": {
           "type": "string",
-          "example": "Confirm shipment for order item 987654321.",
+          "example": "Example request for processing 987654321.",
           "description": "Describes the action that is being processed.",
           "allowEmptyValue": false
         },
@@ -2502,13 +2519,13 @@
         },
         "errorMessage": {
           "type": "string",
-          "example": "The item is already shipped or cancelled.",
+          "example": "The example has been processed.",
           "description": "Shows error message if applicable.",
           "allowEmptyValue": false
         },
         "eventType": {
           "type": "string",
-          "example": "CONFIRM_SHIPMENT",
+          "example": "PROCESS_EXAMPLE",
           "description": "Name of the requested action that is being processed.",
           "allowEmptyValue": false
         },
@@ -2536,7 +2553,7 @@
         },
         "status": {
           "type": "string",
-          "example": "PENDING",
+          "example": "SUCCESS",
           "description": "Status of the action being processed.",
           "allowEmptyValue": false,
           "enum": [
@@ -3268,7 +3285,7 @@
           "allowEmptyValue": false
         },
         "transport": {
-          "$ref": "#/definitions/Transport"
+          "$ref": "#/definitions/TransportInstruction"
         }
       },
       "title": "ShipmentRequest"
@@ -3405,6 +3422,28 @@
         }
       },
       "title": "Transport"
+    },
+    "TransportInstruction": {
+      "type": "object",
+      "required": [
+        "trackAndTrace",
+        "transporterCode"
+      ],
+      "properties": {
+        "trackAndTrace": {
+          "type": "string",
+          "example": "3SBOL0987654321",
+          "description": "The track and trace code associated with this transport. The entered track and trace code will be verified. If you do not have the code, please omit this attribute entirely.",
+          "allowEmptyValue": false
+        },
+        "transporterCode": {
+          "type": "string",
+          "example": "TNT",
+          "description": "Specify the transporter used to fulfil this shipment.",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "TransportInstruction"
     },
     "Transporter": {
       "type": "object",
