@@ -2494,7 +2494,6 @@
         "description",
         "eventType",
         "links",
-        "sellerId",
         "status"
       ],
       "properties": {
@@ -2543,13 +2542,6 @@
           "items": {
             "$ref": "#/definitions/Link"
           }
-        },
-        "sellerId": {
-          "type": "integer",
-          "format": "int64",
-          "example": 123456789,
-          "description": "The seller id.",
-          "allowEmptyValue": false
         },
         "status": {
           "type": "string",
