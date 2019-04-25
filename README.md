@@ -3,7 +3,7 @@
 
 Hello, and welcome to our Retailer API beta support page! This page has been created in order to facilitate a more agile development cycle for the Retailer API, and to enable retailers to provide input on our roadmap.
 
-Please realise that when using the beta endpoints described in the issues, the beta support criteria apply.
+Please realise that when using the beta endpoints described in the issues, the beta support criteria apply. Please find these criteria on https://developers.bol.com/retailerapipublicbeta/.
 
 You can provide your input by leaving commments on feature requests, by adding new requests or by simply pressing the like (or don't like) button.
 
