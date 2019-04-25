@@ -15,6 +15,8 @@ Additionally, the following rules apply when using this page:
 
 •	For support on the v2 or v3 versions, please use the standard partnerservice support channel.
 
+•	If you need help developing your connections, please contact the partnerservice support channel after checking out our help documentation: https://developers.bol.com/apiv3gettingstarted/.
+
 •	Please be polite to fellow developers and to our support staff when leaving comments.
 
 •	This page and the public sharing of our roadmap should be seen as a pilot. Please adhere to the rules above to ensure this is a success.
