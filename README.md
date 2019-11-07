@@ -1,11 +1,6 @@
-# bol.com Retailer API beta
+# bol.com Retailer API
 
-
-Hello, and welcome to our Retailer API beta support page! This page has been created in order to facilitate a more agile development cycle for the Retailer API, and to enable retailers to provide input on our roadmap: https://developers.bol.com/retailer-api-public-beta-roadmap/.
-
-Please realise that when using the beta endpoints described in the issues, the beta support criteria apply. Please find these criteria on https://developers.bol.com/retailerapipublicbeta/.
-
-You can provide your input by leaving commments on feature requests, by adding new requests or by simply pressing the like (or don't like) button.
+Hello, and welcome to our Retailer API beta support page! This page has been created in order to facilitate a more agile development cycle for the Retailer API, and to enable retailers to provide input. You can provide your input by leaving commments on feature requests, by adding new requests or by simply pressing the like (or don't like) button.
 
 Additionally, the following rules apply when using this page:
 
@@ -22,6 +17,3 @@ Additionally, the following rules apply when using this page:
 •	This page and the public sharing of our roadmap should be seen as a pilot. Please adhere to the rules above to ensure this is a success.
 
 The issue overview on this GitHub page is not prioritized. For the priorities on our roadmap, please see our roadmap page on developers.bol.com.
-
- 
-
