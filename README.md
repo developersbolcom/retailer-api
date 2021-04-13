@@ -8,9 +8,9 @@ Additionally, the following rules apply when using this page:
 
 •	Please only use the public Github page for support questions on Beta endpoints and for input on new roadmap features. 
 
-•	For support on the v2 or v3 versions, please use the standard partnerservice support channel.
+•	For support on the v3, v4 or v5 versions, please use the standard partnerservice support channel.
 
-•	If you need help developing your connections, please contact the partnerservice support channel after checking out our help documentation: https://developers.bol.com/apiv3gettingstarted/.
+•	If you need help developing your connections, please contact the partnerservice support channel after checking out our help documentation: https://api.bol.com/retailer/public/Retailer-API/index.html/.
 
 •	Please be polite to fellow developers and to our support staff when leaving comments.
 
